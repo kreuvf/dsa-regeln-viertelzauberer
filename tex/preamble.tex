@@ -1,0 +1,84 @@
+\documentclass[11pt,twoside]{article}      % Specifies the document class
+\usepackage{polyglossia}
+\setdefaultlanguage[variant=german,spelling=new]{german}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+
+\usepackage{geometry}
+\geometry{a4paper, left=2cm, right=2cm, top=3cm, bottom=3cm}
+
+\usepackage{siunitx}
+\sisetup{
+	exponent-product = \cdot,
+	fraction-function = \sfrac,
+	group-digits = integer,
+	group-minimum-digits = 4,
+	group-separator = \text{.},
+	input-product = *,
+	inter-unit-product ={}\cdot{},
+	list-units = repeat,
+	mode = text,
+	multi-part-units = repeat,
+	output-decimal-marker = \text{,},
+	output-product = \cdot,
+	qualifier-mode = subscript,
+	quotient-mode = fraction,
+	range-units = repeat,
+	separate-uncertainty = true,
+	table-figures-uncertainty = 1,
+	table-figures-integer = 1,
+	table-number-alignment = center-decimal-marker
+}%
+\DeclareSIUnit{\K}{K}
+\DeclareSIUnit{\H}{H}
+\DeclareSIUnit{\S}{S}
+\DeclareSIUnit{\D}{D}
+\DeclareSIUnit{\ZfPstern}{ZfP*}
+
+\usepackage{import}
+\usepackage{todonotes}
+\usepackage[intoc]{nomencl}
+\renewcommand{\nomname}{Abkürzungsverzeichnis}
+\makenomenclature
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\usepackage{xfrac}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xunicode}
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{Linux Libertine O}
+
+\usepackage{xltxtra}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{tabularx}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+
+\usepackage{threeparttable}
+
+\usepackage{pdfcprot}
+\usepackage[grumpy]{gitinfo2}
+
+% Taken from Schr4t
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty 10000
+\vfuzz \hfuzz
+\raggedbottom
+% /Taken from Schr4t
+
+\usepackage[pdfborder={0 0 0.6},pdftitle={Geld verdienen als Gildenmagier -- eine inoffizielle Spielhilfe auf Basis von Das Schwarze Auge 4.1},pdfauthor={Steven Koenig / kreuvf.de, Matthias Petzold},pdfsubject={Betrachtung der einem Gildenmagier zur Verfügung stehenden Einnahmequellen},colorlinks=false]{hyperref}
+\hypersetup{
+	pdfkeywords = {Version: \gitHash, Branch: \gitBranch}
+}
+
+% Redefinitions
+\renewcommand{\nobreakspace}[1]{ #1}% The space used is U+00A0 NO-BREAK SPACE; This is a fix for the error "! LaTeX Error: Command \nobreakspace unavailable in encoding EU1."

@@ -1,0 +1,34 @@
+sed -r \
+-e 's|<h4>(.*)</h4>|\\section{\1}|' \
+-e 's|<em>([^<]+)</em>|\\textit{\1}|g' \
+-e 's|<abbr title="Meisterschirm">MS</abbr>|MS|g' \
+-e 's_([0-9]+)( |&nbsp;)<abbr title="Zauberfertigkeitspunkte nach der Probe">ZfP\*</abbr>_\\SI{\1}{\\ZfPstern}_g' \
+-e 's|<abbr title="Abenteuerpunkte">AP</abbr>|AP|g' \
+-e 's|<abbr title="Liber Cantiones \(Hardcover\)">LC</abbr>|LC|' \
+-e 's|<h5>(.*)</h5>|\\paragraph{\1}|' \
+-e 's|<ul>|\\begin{itemize}|' \
+-e 's|<li>(.*)(</li>)?$|\t\\item \1|' \
+-e 's|</li>$||' \
+-e 's|</ul>|\\end{itemize}|' \
+-e 's|<abbr title="Wege der Helden">WdH</abbr>|WdH|g' \
+-e 's|<abbr title="Wege des Schwerts">WdS</abbr>|WdS|g' \
+-e 's|<abbr title="Wege der Zauberei">WdZ</abbr>|WdZ|g' \
+-e 's|<abbr title="Zoo-Botanica Aventurica">ZBA</abbr>|ZBA|g' \
+-e 's|<abbr title="Astralpunkt">AsP</abbr>|AsP|g' \
+-e 's|<abbr title="Lebenspunkt">LeP</abbr>|LeP|g' \
+-e 's|<abbr title="Zauberfertigkeitswert">ZfW</abbr>|ZfW|g' \
+-e 's_([0-9]+)( |&nbsp;)<abbr title="(Dukaten|Silberling|Heller|Kreuzer)">(D|S|H|K)</abbr>_\\SI{\1}{\\\4}_g' \
+-e 's_(([0-9])\.([0-9]))( |&nbsp;)<abbr title="(Dukaten|Silberling|Heller|Kreuzer)">(D|S|H|K)</abbr>_\\SI{\2,\3}{\\\4}_g' \
+-e 's_([0-9]+)(\+)( |&nbsp;)<abbr title="(Dukaten|Silberling|Heller|Kreuzer)">(D|S|H|K)</abbr>_\\SI{\1}{\\\5} und mehr_g' \
+-e 's_(([0-9])\.([0-9]))(\+)( |&nbsp;)<abbr title="(Dukaten|Silberling|Heller|Kreuzer)">(D|S|H|K)</abbr>_\\SI{\2,\3}{\\\5} und mehr_g' \
+-e 's|<abbr title="Kreuzer">K</abbr>|K|g' \
+-e 's|<abbr title="Heller">H</abbr>|H|g' \
+-e 's|<abbr title="Silberling">S</abbr>|S|g' \
+-e 's|<abbr title="Dukaten">D</abbr>|D|g' \
+-e 's|<abbr title="Hallen arkaner Macht">HAM</abbr>|HAM|g' \
+-e 's|&bdquo;([^&]+)&ldquo;|\\enquote{\1}|g' \
+-e 's|&nbsp;&ndash;&nbsp;| -- |g' \
+-e 's|<abbr title="Wege der Alchimie">WdA</abbr>|WdA|g' \
+-e 's|<abbr title="mindestens">min\.</abbr>|min.|g' \
+-e 's|<abbr title="sechsseitiger Würfel">W6</abbr>|W6|g' \
+temp.in > temp.out
