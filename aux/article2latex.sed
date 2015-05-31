@@ -1,21 +1,4 @@
 sed -r \
--e '# Artikelstruktur' \
--e 's|<h4>(.*)</h4>|\\section{\1}|' \
--e 's|<h5>(.*)</h5>|\\subsection{\1}|' \
--e 's|<h6>(.*)</h6>|\\paragraph{\1}|' \
--e '# Listen' \
--e 's|<ul>|\\begin{itemize}|' \
--e 's|<li>(.*)(</li>)?$|\t\\item \1|' \
--e 's|</li>$||' \
--e 's|</ul>|\\end{itemize}|' \
--e '# Tabellen' \
--e 's|<table>|\\begin{table}\n\t\\centering\n\t\\caption[Kurzbeschreibung für Verzeichnis]{Langbezeichnung für direkte Anzeige\\label{identifier-vergeben}}\n\t\\begin{tabular}{SPALTENDEFINIEREN!}\n\t\t\\toprule|' \
--e 's|</?tr>||' \
--e 's|</table>|\t\t\\bottomrule\n\t\\end{tabular}\n\\end{table}|' \
--e '# Text' \
--e 's|<em>([^<]+)</em>|\\textit{\1}|g' \
--e 's|&bdquo;([^&]+)&ldquo;|\\enquote{\1}|g' \
--e 's|&nbsp;&ndash;&nbsp;| -- |g' \
 -e '# Un-abbrify' \
 -e 's|<abbr title="Mut">(MU)</abbr>|\1|g' \
 -e 's|<abbr title="Intuition">(IN)</abbr>|\1|g' \
@@ -55,4 +38,24 @@ sed -r \
 -e 's|<abbr title="Zoo-Botanica Aventurica">(ZBA)</abbr>|\1|g' \
 -e 's|<abbr title="Das Schwarze Auge">(DSA)</abbr>|\1|g' \
 -e 's|<abbr title="Zeiteinheit">(ZE)</abbr>|\1|g' \
+-e '# Artikelstruktur' \
+-e 's|<h4>(.*)</h4>|\\section{\1}|' \
+-e 's|<h5>(.*)</h5>|\\subsection{\1}|' \
+-e 's|<h6>(.*)</h6>|\\paragraph{\1}|' \
+-e '# Listen' \
+-e 's|<ul>|\\begin{itemize}|' \
+-e 's|<li>(.*)(</li>)?$|\t\\item \1|' \
+-e 's|</li>$||' \
+-e 's|</ul>|\\end{itemize}|' \
+-e '# Tabellen' \
+-e 's|<table>|\\begin{table}\n\t\\centering\n\t\\caption[Kurzbeschreibung für Verzeichnis]{Langbezeichnung für direkte Anzeige\\label{identifier-vergeben}}\n\t\\begin{tabular}{SPALTENDEFINIEREN!}\n\t\t\\toprule|' \
+-e 's|</?tr>||' \
+-e 's|</table>|\t\t\\bottomrule\n\t\\end{tabular}\n\\end{table}|' \
+-e '# Text' \
+-e 's|<em>([^<]+)</em>|\\textit{\1}|g' \
+-e 's|&bdquo;([^&]+)&ldquo;|\\enquote{\1}|g' \
+-e 's|&nbsp;&ndash;&nbsp;| -- |g' \
+-e 's|<a href="([^"]+)"[^>]*>|\\href{\1}{|g' \
+-e 's|</a>|}|g' \
+-e 's_([0-9]+)&nbsp;(AP|AsP|GP|h|ZfP)_\\SI{\1}{\\\2}_g' \
 temp.in > temp.out
