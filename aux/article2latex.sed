@@ -58,4 +58,6 @@ sed -r \
 -e 's|<a href="([^"]+)"[^>]*>|\\href{\1}{|g' \
 -e 's|</a>|}|g' \
 -e 's_([0-9]+)&nbsp;(AP|AsP|GP|h|ZfP)_\\SI{\1}{\\\2}_g' \
+-e '# LaTeX-spezifisches Markup' \
+-e 's|%|\\%|g' \
 temp.in > temp.out
