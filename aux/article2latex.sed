@@ -15,6 +15,7 @@ sed -r \
 -e 's|<abbr title="Zauberfertigkeitspunkt">(ZfP)</abbr>|\1|g' \
 -e 's|<abbr title="Zauberfertigkeitswert">(ZfW)</abbr>|\1|g' \
 -e 's_([0-9]+)( |&nbsp;)<abbr title="aus der Zauberprobe übrig behaltener Zauberfertigkeitspunkt">(ZfP\*)</abbr>_\\SI{\1}{\\ZfPstern}_g' \
+-e 's|<abbr title="aus der Zauberprobe übrig behaltener Zauberfertigkeitspunkt">(ZfP\*)</abbr>|ZfP*|g' \
 -e 's|<abbr title="Generierungspunkt">(GP)</abbr>|\1|g' \
 -e 's|<abbr title="dreiseitiger Würfel">(W3)</abbr>|\1|g' \
 -e 's|<abbr title="sechsseitiger Würfel">(W6)</abbr>|\1|g' \
@@ -38,6 +39,7 @@ sed -r \
 -e 's|<abbr title="Zoo-Botanica Aventurica">(ZBA)</abbr>|\1|g' \
 -e 's|<abbr title="Das Schwarze Auge">(DSA)</abbr>|\1|g' \
 -e 's|<abbr title="Zeiteinheit">(ZE)</abbr>|\1|g' \
+-e 's|<abbr title="Portable Document Format">PDF</abbr>|\1|g' \
 -e '# Artikelstruktur' \
 -e 's|<h4>(.*)</h4>|\\section{\1}|' \
 -e 's|<h5>(.*)</h5>|\\subsection{\1}|' \
