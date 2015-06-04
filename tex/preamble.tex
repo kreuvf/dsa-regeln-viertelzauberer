@@ -1,4 +1,8 @@
 \documentclass[11pt,twoside]{article}      % Specifies the document class
+
+\usepackage{mathspec} % Must load before polyglossia, otherwise "! LaTeX Error: Option clash for package fontspec."
+\setprimaryfont{Linux Libertine O}
+
 \usepackage{polyglossia}
 \setdefaultlanguage[variant=german,spelling=new]{german}
 \usepackage[autostyle=true,german=quotes]{csquotes}
@@ -56,8 +60,6 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{xunicode}
-\usepackage{fontspec}
-\setmainfont[Mapping=tex-text]{Linux Libertine O}
 
 \usepackage{xltxtra}
 \usepackage{graphicx}
