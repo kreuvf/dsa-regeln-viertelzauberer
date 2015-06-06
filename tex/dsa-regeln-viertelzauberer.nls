@@ -1,0 +1,34 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{AP}]\begingroup Abenteuerpunkt\nomeqref {0}\nompageref{1}
+  \item [{AsP}]\begingroup Astralpunkt\nomeqref {0}\nompageref{1}
+  \item [{CH}]\begingroup Charisma\nomeqref {0}\nompageref{1}
+  \item [{DSA}]\begingroup Das Schwarze Auge\nomeqref {0}\nompageref{1}
+  \item [{FF}]\begingroup Fingerfertigkeit\nomeqref {0}\nompageref{1}
+  \item [{GE}]\begingroup Gewandtheit\nomeqref {0}\nompageref{1}
+  \item [{GP}]\begingroup Generierungspunkt\nomeqref {0}\nompageref{1}
+  \item [{GS}]\begingroup Geschwindigkeit\nomeqref {0}\nompageref{1}
+  \item [{IN}]\begingroup Intuition\nomeqref {0}\nompageref{1}
+  \item [{KK}]\begingroup Körperkraft\nomeqref {0}\nompageref{1}
+  \item [{KO}]\begingroup Konstitution\nomeqref {0}\nompageref{1}
+  \item [{MU}]\begingroup Mut\nomeqref {0}\nompageref{1}
+  \item [{W20}]\begingroup zwanzigseitiger Würfel\nomeqref {0}
+		\nompageref{1}
+  \item [{W3}]\begingroup dreiseitiger Würfel\nomeqref {0}
+		\nompageref{1}
+  \item [{W6}]\begingroup sechsseitiger Würfel\nomeqref {0}
+		\nompageref{1}
+  \item [{WdH}]\begingroup Wege der Helden\nomeqref {0}\nompageref{1}
+  \item [{WdS}]\begingroup Wege des Schwerts\nomeqref {0}\nompageref{1}
+  \item [{WdZ}]\begingroup Wege der Zauberei\nomeqref {0}\nompageref{1}
+  \item [{ZE}]\begingroup Zeiteinheit\nomeqref {0}\nompageref{1}
+  \item [{ZfP}]\begingroup Zauberfertigkeitspunkt\nomeqref {0}
+		\nompageref{1}
+  \item [{ZfP*}]\begingroup aus der Zauberprobe übrig behaltener Zauberfertigkeitspunkt\nomeqref {0}
+		\nompageref{1}
+  \item [{ZfW}]\begingroup Zauberfertigkeitswert\nomeqref {0}
+		\nompageref{1}
+
+\end{thenomenclature}
