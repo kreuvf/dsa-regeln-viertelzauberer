@@ -84,9 +84,39 @@
 \raggedbottom
 % /Taken from Schr4t
 
+% xstring: einfache Stringverarbeitung
+% Zur Extraktion des Datums aus \gitAuthorIsoDate: 2016-04-25 20:35:56 +0200
+% Ziel: 20160425203556
+% Zeitzoneninformation wird wahrscheinlich aus der Umgebung genommen; muss
+\usepackage{xstring}
+\StrLeft{\gitAuthorIsoDate}{4}[\isuAuthorPDFyear]
+\StrMid{\gitAuthorIsoDate}{6}{7}[\isuAuthorPDFmonth]
+\StrMid{\gitAuthorIsoDate}{9}{10}[\isuAuthorPDFday]
+\StrMid{\gitAuthorIsoDate}{12}{13}[\isuAuthorPDFhour]
+\StrMid{\gitAuthorIsoDate}{15}{16}[\isuAuthorPDFmin]
+\StrMid{\gitAuthorIsoDate}{18}{19}[\isuAuthorPDFsecond]
+\StrMid{\gitAuthorIsoDate}{21}{21}[\isuAuthorPDFTZsign]
+\StrMid{\gitAuthorIsoDate}{22}{23}[\isuAuthorPDFTZhour]
+\StrMid{\gitAuthorIsoDate}{24}{25}[\isuAuthorPDFTZmin]
+\newcommand{\isuPDFdate}{%
+	\isuAuthorPDFyear%
+	\isuAuthorPDFmonth%
+	\isuAuthorPDFday%
+	\isuAuthorPDFhour%
+	\isuAuthorPDFmin%
+	\isuAuthorPDFsecond%
+	\isuAuthorPDFTZsign%
+	\isuAuthorPDFTZhour%
+	:\isuAuthorPDFTZmin%
+}
+
 \usepackage[pdfborder={0 0 0.6},pdftitle={Regeln für Viertelzauberer -- eine inoffizielle Regelüberarbeitung auf Basis von Das Schwarze Auge 4.1},pdfauthor={Steven Koenig / kreuvf.de},pdfsubject={Analyse und anschließende Überarbeitung der Regeln für Viertelzauberer in DSA4.1},colorlinks=false]{hyperref}
 \hypersetup{
-	pdfkeywords = {Version: \gitHash, Branch: \gitBranch}
+	pdfkeywords = {Version: \gitHash, Branch: \gitBranch},
+	pdfinfo={
+		CreationDate={D:\isuPDFdate{}},
+		ModDate={D:\isuPDFdate{}},
+	}
 }
 
 % Redefinitions
