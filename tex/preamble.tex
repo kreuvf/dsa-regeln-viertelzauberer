@@ -84,6 +84,11 @@
 \raggedbottom
 % /Taken from Schr4t
 
+\usepackage{xcolor}
+\definecolor{linkgreen}{rgb}{0.051,0.50,0.15}
+\definecolor{uriblue}{rgb}{0.051,0.15,0.50}
+\definecolor{isugrey}{rgb}{0.2,0.2,0.2}
+
 % xstring: einfache Stringverarbeitung
 % Zur Extraktion des Datums aus \gitAuthorIsoDate: 2016-04-25 20:35:56 +0200
 % Ziel: 20160425203556
@@ -110,14 +115,26 @@
 	:\isuAuthorPDFTZmin%
 }
 
-\usepackage[pdfborder={0 0 0.6},pdftitle={Regeln für Viertelzauberer -- eine inoffizielle Regelüberarbeitung auf Basis von Das Schwarze Auge 4.1},pdfauthor={Steven Koenig / kreuvf.de},pdfsubject={Analyse und anschließende Überarbeitung der Regeln für Viertelzauberer in DSA4.1},colorlinks=false]{hyperref}
+\usepackage[]{hyperref}
 \hypersetup{
-	pdfkeywords = {Version: \gitHash, Branch: \gitBranch},
+	pdfborder = {0 0 1},
+	pdfborderstyle = {/S/U/W 1},
+	breaklinks = true,
+	colorlinks = false,
+	citebordercolor = linkgreen,
+	linkbordercolor = linkgreen,
+	urlbordercolor = uriblue,
+	pdftitle = {Regeln für Viertelzauberer -- eine inoffizielle Regelüberarbeitung auf Basis von Das Schwarze Auge 4.1},
+	pdfauthor = {Steven Koenig / Isurandil},
+	pdfsubject = {Analyse und anschließende Überarbeitung der Regeln für Viertelzauberer in DSA4.1},
+	pdfkeywords = {Version: \gitHash{}, date: \gitAuthorDate{}, branch: \gitBranch{}},
 	pdfinfo={
 		CreationDate={D:\isuPDFdate{}},
 		ModDate={D:\isuPDFdate{}},
 	}
 }
+\urlstyle{rm}
+
 
 % Redefinitions
 \renewcommand{\nobreakspace}[1]{ #1}% The space used is U+00A0 NO-BREAK SPACE; This is a fix for the error "! LaTeX Error: Command \nobreakspace unavailable in encoding EU1."
